@@ -44,7 +44,7 @@ export default async function CasoPagina({
   return (
     <article className="py-16">
       <header className="border-rule border-b pb-10">
-        <p className="text-ink-muted font-mono text-xs tracking-widest uppercase">
+        <p className="text-ink-muted font-mono text-sm tracking-widest uppercase">
           <span data-numeric>{meta.ano}</span> · {meta.papel}
         </p>
         <h1 className="mt-5 max-w-[24ch] text-4xl sm:text-5xl">{meta.titulo}</h1>
@@ -52,7 +52,7 @@ export default async function CasoPagina({
       </header>
 
       <div className="grid gap-x-10 gap-y-8 pt-10 lg:grid-cols-[9rem_minmax(0,1fr)]">
-        <aside className="text-ink-muted space-y-6 font-mono text-xs">
+        <aside className="text-ink-muted space-y-6 font-mono text-sm">
           <div>
             <h2 className="tracking-widest uppercase">Stack</h2>
             <ul className="mt-2 space-y-1">

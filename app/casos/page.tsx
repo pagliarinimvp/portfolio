@@ -30,7 +30,7 @@ export default async function Casos() {
             </Link>
           </h2>
           <p className="text-ink-muted mt-2">{caso.meta.resumo}</p>
-          <p className="text-ink-muted mt-4 font-mono text-xs">
+          <p className="text-ink-muted mt-4 font-mono text-sm">
             {caso.meta.papel} · {caso.meta.stack.join(" · ")}
           </p>
         </Secao>

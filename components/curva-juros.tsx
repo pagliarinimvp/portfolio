@@ -113,7 +113,7 @@ export function CurvaJuros() {
           style={{ "--comprimento": comprimento(pontosAcumulado) } as React.CSSProperties}
         />
 
-        <g className="curva-rotulo" fontFamily="var(--fonte-mono)" fontSize="11">
+        <g className="curva-rotulo" fontFamily="var(--fonte-mono)" fontSize="13">
           <text x="0" y={ALTURA - 8} fill="var(--ink-muted)">
             ano 0
           </text>
@@ -123,7 +123,7 @@ export function CurvaJuros() {
         </g>
       </svg>
 
-      <figcaption className="text-ink-muted mt-4 font-mono text-xs leading-relaxed">
+      <figcaption className="text-ink-muted mt-4 font-mono text-sm leading-relaxed">
         <span className="text-accent">—</span> montante acumulado{" "}
         <span data-numeric>{formatador.format(totalAcumulado)}</span>
         <span className="text-rule mx-2">|</span>

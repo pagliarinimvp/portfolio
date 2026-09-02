@@ -25,7 +25,7 @@ export default function Contato() {
       <Secao rotulo="Onde me achar">
         <dl className="space-y-5 font-mono text-sm">
           <div>
-            <dt className="text-ink-muted text-xs tracking-widest uppercase">E-mail</dt>
+            <dt className="text-ink-muted text-sm tracking-widest uppercase">E-mail</dt>
             <dd className="mt-1">
               <a className={linkClasse} href={`mailto:${perfil.email}`}>
                 {perfil.email}
@@ -33,7 +33,7 @@ export default function Contato() {
             </dd>
           </div>
           <div>
-            <dt className="text-ink-muted text-xs tracking-widest uppercase">GitHub</dt>
+            <dt className="text-ink-muted text-sm tracking-widest uppercase">GitHub</dt>
             <dd className="mt-1">
               <a className={linkClasse} href={perfil.github}>
                 @pagliarinimvp
@@ -42,7 +42,7 @@ export default function Contato() {
           </div>
           {perfil.linkedin ? (
             <div>
-              <dt className="text-ink-muted text-xs tracking-widest uppercase">
+              <dt className="text-ink-muted text-sm tracking-widest uppercase">
                 LinkedIn
               </dt>
               <dd className="mt-1">

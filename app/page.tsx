@@ -12,12 +12,12 @@ export default async function Home() {
     <>
       <section className="border-rule grid gap-12 border-b py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:py-24">
         <div>
-          <p className="text-ink-muted font-mono text-xs tracking-widest uppercase">
+          <p className="text-ink-muted font-mono text-sm tracking-widest uppercase">
             {perfil.papel}
           </p>
           <h1 className="mt-5 text-4xl leading-[1.05] sm:text-5xl">{perfil.manchete}</h1>
           <p className="text-ink-muted mt-6 max-w-[34rem]">{perfil.resumo}</p>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs">
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
             <Link
               href="/casos"
               className="text-accent decoration-rule hover:decoration-accent underline underline-offset-4"
@@ -46,7 +46,7 @@ export default async function Home() {
                 </Link>
               </h3>
               <p className="text-ink-muted mt-2">{caso.meta.resumo}</p>
-              <p className="text-ink-muted mt-3 font-mono text-xs">
+              <p className="text-ink-muted mt-3 font-mono text-sm">
                 <span data-numeric>{caso.meta.ano}</span> · {caso.meta.stack.join(" · ")}
               </p>
             </li>
@@ -62,7 +62,7 @@ export default async function Home() {
           {perfil.competencias.map((competencia) => (
             <div key={competencia.nome}>
               <dt className="font-display font-semibold">{competencia.nome}</dt>
-              <dd className="text-ink-muted font-mono text-xs">{competencia.contexto}</dd>
+              <dd className="text-ink-muted font-mono text-sm">{competencia.contexto}</dd>
             </div>
           ))}
         </dl>

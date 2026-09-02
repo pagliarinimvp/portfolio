@@ -18,7 +18,7 @@ export function Secao({
     <section
       className={`border-rule grid gap-x-10 gap-y-3 border-t py-12 lg:grid-cols-[9rem_minmax(0,1fr)] ${className}`}
     >
-      <h2 className="text-ink-muted font-mono text-xs font-normal tracking-widest uppercase lg:pt-1">
+      <h2 className="text-ink-muted font-mono text-sm font-normal tracking-widest uppercase lg:pt-1">
         {rotulo}
       </h2>
       <div className="max-w-[38rem]">{children}</div>

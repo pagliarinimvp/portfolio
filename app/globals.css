@@ -6,14 +6,17 @@
   Paleta "tinta e papel de cotacao".
   Ancorada no vocabulario de relatorio financeiro: tinta azul-marinho no lugar
   do preto, e um unico acento — o verde de alta do mercado. Contraste medido:
-  ink 15.3:1, ink-muted 5.7:1, accent 6.5:1 sobre o papel claro.
+  ink 15.3:1, ink-muted 7.7:1, accent 6.5:1 sobre o papel claro. ink-muted foi
+  escurecido de 5.7:1 porque o site usa muito em rotulos mono pequenos
+  (uppercase + tracking largo), que pedem mais margem de contraste que texto
+  corrido do mesmo nivel.
 */
 :root {
   color-scheme: light;
   --paper: #fafafa;
   --paper-raised: #ffffff;
   --ink: #14213d;
-  --ink-muted: #5a6478;
+  --ink-muted: #465066;
   --rule: #dcdcd6;
   --accent: #046a38;
   --accent-soft: #e6f2eb;
@@ -35,7 +38,7 @@
   --paper: #0e1420;
   --paper-raised: #151d2c;
   --ink: #e9ecf3;
-  --ink-muted: #98a2b8;
+  --ink-muted: #a3adc2;
   --rule: #27314a;
   --accent: #4cc98a;
   --accent-soft: #12271e;

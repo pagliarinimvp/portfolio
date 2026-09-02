@@ -14,7 +14,7 @@ export default function Sobre() {
     <>
       <header className="py-16">
         <h1 className="text-4xl sm:text-5xl">Sobre</h1>
-        <p className="text-ink-muted mt-4 font-mono text-xs tracking-widest uppercase">
+        <p className="text-ink-muted mt-4 font-mono text-sm tracking-widest uppercase">
           De negócios e finanças para dados
         </p>
       </header>
@@ -31,7 +31,7 @@ export default function Sobre() {
         <Secao rotulo="Formação">
           <p className="font-display font-semibold">{perfil.formacao.curso}</p>
           <p className="text-ink-muted">{perfil.formacao.instituicao}</p>
-          <p className="text-ink-muted font-mono text-xs" data-numeric>
+          <p className="text-ink-muted font-mono text-sm" data-numeric>
             {perfil.formacao.conclusao}
           </p>
         </Secao>
@@ -39,7 +39,7 @@ export default function Sobre() {
 
       {perfil.competenciasEmEstudo ? (
         <Secao rotulo="Em estudo">
-          <ul className="text-ink-muted flex flex-wrap gap-x-4 gap-y-2 font-mono text-xs">
+          <ul className="text-ink-muted flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm">
             {perfil.competenciasEmEstudo.map((item) => (
               <li key={item}>{item}</li>
             ))}
