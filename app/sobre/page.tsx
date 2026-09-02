@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Sobre() {
   return (
     <>
-      <header className="py-16">
+      <header className="py-10">
         <h1 className="text-4xl sm:text-5xl">Sobre</h1>
         <p className="text-ink-muted mt-4 font-mono text-sm tracking-widest uppercase">
           De negócios e finanças para dados

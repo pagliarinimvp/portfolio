@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="border-rule grid gap-12 border-b py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:py-24">
+      <section className="border-rule grid gap-12 border-b py-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:py-14">
         <div>
           <p className="text-ink-muted font-mono text-sm tracking-widest uppercase">
             {perfil.papel}

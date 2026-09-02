@@ -14,7 +14,7 @@ const linkClasse =
 export default function Contato() {
   return (
     <>
-      <header className="py-16">
+      <header className="py-10">
         <h1 className="text-4xl sm:text-5xl">Contato</h1>
         <p className="text-ink-muted mt-4 max-w-[34rem]">
           Aberto a conversas sobre vagas em análise de dados, projetos e colaborações.

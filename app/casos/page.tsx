@@ -14,7 +14,7 @@ export default async function Casos() {
 
   return (
     <>
-      <header className="py-16">
+      <header className="py-10">
         <h1 className="text-4xl sm:text-5xl">Casos</h1>
         <p className="text-ink-muted mt-4 max-w-[34rem]">
           Cada caso conta o problema, as decisões tomadas e o que deu errado no caminho —
