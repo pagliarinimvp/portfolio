@@ -12,7 +12,7 @@ const navegacao = [
 export function SiteHeader() {
   return (
     <header className="border-rule border-b">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-5">
+      <div className="mx-auto flex max-w-[clamp(64rem,80vw,88rem)] flex-wrap items-center justify-between gap-x-4 gap-y-2 px-6 py-5">
         <Link
           href="/"
           className="font-display text-ink hover:text-accent text-sm font-bold tracking-tight"
