@@ -1,0 +1,63 @@
+export const meta = {
+  titulo: "Portal FinQuant",
+  resumo:
+    "Plataforma de educação em finanças quantitativas: artigos, contas de usuário, calculadora de juros compostos e pesquisa de satisfação. Django em produção, não notebook local.",
+  ano: "2026",
+  papel: "Concepção, desenvolvimento e deploy",
+  stack: ["Python 3.12", "Django 6.1", "PostgreSQL", "Bootstrap 5", "Render"],
+  repositorio: "https://github.com/pagliarinimvp/portal-finquant",
+};
+
+## O problema
+
+Conteúdo sobre finanças quantitativas costuma chegar em dois extremos: ou é
+superficial a ponto de não ensinar nada aplicável, ou pressupõe um repertório
+matemático que afasta quem está começando. Quem quer entender o que acontece com
+o próprio dinheiro fica no meio, sem material que explique o mecanismo.
+
+O Portal FinQuant é uma plataforma educacional que trata esse público como capaz:
+explica o conceito e entrega a ferramenta para experimentar com ele.
+
+## O que o sistema faz
+
+- **Artigos educacionais**, publicados e editados pelo Django Admin
+- **Contas de usuário**, com cadastro e autenticação
+- **Calculadora de juros compostos**, para simular aportes ao longo do tempo
+- **Pesquisa de satisfação**, com respostas exportáveis para avaliar a qualidade
+  percebida do material
+
+## Decisões de arquitetura
+
+**Django com templates renderizados no servidor, não SPA.** O conteúdo é
+majoritariamente texto que precisa ser indexado e carregar rápido. Uma API mais
+front-end separado adicionaria duas camadas de complexidade sem resolver nenhum
+problema que o projeto tinha. O Django Admin, de graça, já resolvia a publicação
+dos artigos — construir um CMS próprio teria sido trabalho jogado fora.
+
+**SQLite em desenvolvimento, PostgreSQL em produção.** Desenvolvimento sem
+dependência de serviço externo; produção com um banco que aguenta concorrência e
+tem backup de verdade.
+
+**Deploy declarado em `render.yaml`.** A infraestrutura fica versionada junto com
+o código: o Blueprint do Render provisiona o banco e as variáveis de ambiente a
+partir do arquivo. Recriar o ambiente é reexecutar o Blueprint, não seguir um
+passo a passo de memória.
+
+<Nota>
+  A diferença entre um projeto de estudo e um sistema é o deploy. Enquanto roda só na
+  máquina de quem escreveu, nenhuma das decisões difíceis apareceu: variável de ambiente,
+  chave secreta fora do repositório, arquivo estático servido em produção, migração
+  aplicada em banco que já tem dado dentro.
+</Nota>
+
+{/* PENDENTE — só você pode escrever esta parte. Substitua por 2 ou 3 parágrafos
+concretos: qual problema apareceu no meio do caminho, que decisão você
+reverteu, o que faria diferente. É a seção que um entrevistador mais lê,
+porque é a que não dá para copiar de tutorial. */}
+
+## O que vem depois
+
+A continuação natural é analítica: comparar, com dados reais de mercado, uma
+estratégia ativa de ações contra alternativas passivas e de renda fixa. É o ponto
+onde o projeto deixa de ser um sistema que ensina finanças e passa a produzir a
+própria análise.

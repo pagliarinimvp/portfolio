@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Paleta "tinta e papel de cotacao".
+  Ancorada no vocabulario de relatorio financeiro: tinta azul-marinho no lugar
+  do preto, e um unico acento — o verde de alta do mercado. Contraste medido:
+  ink 15.3:1, ink-muted 5.7:1, accent 6.5:1 sobre o papel claro.
+*/
+:root {
+  color-scheme: light;
+  --paper: #fafafa;
+  --paper-raised: #ffffff;
+  --ink: #14213d;
+  --ink-muted: #5a6478;
+  --rule: #dcdcd6;
+  --accent: #046a38;
+  --accent-soft: #e6f2eb;
+
+  /*
+    As fontes precisam existir como variavel propria, igual as cores: o
+    `@theme inline` inlina os valores nos utilitarios e nao emite as custom
+    properties, entao `var(--font-body)` fora de um utilitario nao resolve.
+    Os `--font-*` do next/font sao aplicados por classe no <body> e resolvem
+    ali pela cascata.
+  */
+  --fonte-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --fonte-corpo: var(--font-literata), ui-serif, Georgia, serif;
+  --fonte-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+.dark {
+  color-scheme: dark;
+  --paper: #0e1420;
+  --paper-raised: #151d2c;
+  --ink: #e9ecf3;
+  --ink-muted: #98a2b8;
+  --rule: #27314a;
+  --accent: #4cc98a;
+  --accent-soft: #12271e;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+
+  --font-display: var(--fonte-display);
+  --font-body: var(--fonte-corpo);
+  --font-mono: var(--fonte-mono);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--fonte-corpo);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  /* Todo numero comparavel alinha em coluna. */
+  time,
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Animacao de entrada do hero: as curvas se tracam uma vez, na carga. */
+@keyframes tracar-linha {
+  from {
+    stroke-dashoffset: var(--comprimento);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.curva-tracada {
+  stroke-dasharray: var(--comprimento);
+  stroke-dashoffset: var(--comprimento);
+  animation: tracar-linha 1.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.curva-area {
+  opacity: 0;
+  animation: surgir 1s ease-out 1.1s forwards;
+}
+
+.curva-rotulo {
+  opacity: 0;
+  animation: surgir 0.7s ease-out 1.7s forwards;
+}
