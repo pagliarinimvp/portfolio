@@ -51,3 +51,6 @@ next-env.d.ts
 
 # revisao visual
 /.screenshots
+
+.vercel
+.env*
