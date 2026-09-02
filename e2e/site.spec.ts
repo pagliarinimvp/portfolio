@@ -62,14 +62,16 @@ test.describe("navegação", () => {
   });
 });
 
-test("a página não rola na horizontal em 360px", async ({ page }) => {
-  await page.setViewportSize({ width: 360, height: 780 });
+for (const largura of [320, 360]) {
+  test(`a página não rola na horizontal em ${largura}px`, async ({ page }) => {
+    await page.setViewportSize({ width: largura, height: 780 });
 
-  for (const caminho of paginas) {
-    await page.goto(caminho);
-    const estoura = await page.evaluate(
-      () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
-    );
-    expect(estoura, `rolagem horizontal em ${caminho}`).toBe(false);
-  }
-});
+    for (const caminho of paginas) {
+      await page.goto(caminho);
+      const estoura = await page.evaluate(
+        () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
+      );
+      expect(estoura, `rolagem horizontal em ${caminho}`).toBe(false);
+    }
+  });
+}
