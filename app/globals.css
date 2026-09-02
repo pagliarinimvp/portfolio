@@ -3,13 +3,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
-  Paleta "tinta e papel de cotacao".
-  Ancorada no vocabulario de relatorio financeiro: tinta azul-marinho no lugar
-  do preto, e um unico acento — o verde de alta do mercado. Contraste medido:
-  ink 15.3:1, ink-muted 7.7:1, accent 6.5:1 sobre o papel claro. ink-muted foi
-  escurecido de 5.7:1 porque o site usa muito em rotulos mono pequenos
-  (uppercase + tracking largo), que pedem mais margem de contraste que texto
-  corrido do mesmo nivel.
+  Paleta "terminal de mercado".
+  O escuro e o modo padrao do site (abre assim pra quem chega pela primeira
+  vez) — a referencia e um terminal de cotacao, nao um relatorio impresso. O
+  claro continua disponivel no alternador de tema. Contraste medido no escuro:
+  ink 16.2:1, ink-muted 7.4:1, accent 10.7:1 sobre o papel. No claro: ink
+  15.3:1, ink-muted 7.7:1, accent 6.5:1.
 */
 :root {
   color-scheme: light;
@@ -28,20 +27,20 @@
     Os `--font-*` do next/font sao aplicados por classe no <body> e resolvem
     ali pela cascata.
   */
-  --fonte-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --fonte-display: var(--font-plex-mono), ui-monospace, monospace;
   --fonte-corpo: var(--font-literata), ui-serif, Georgia, serif;
   --fonte-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 .dark {
   color-scheme: dark;
-  --paper: #0e1420;
-  --paper-raised: #151d2c;
-  --ink: #e9ecf3;
-  --ink-muted: #a3adc2;
-  --rule: #27314a;
-  --accent: #4cc98a;
-  --accent-soft: #12271e;
+  --paper: #0a0f1a;
+  --paper-raised: #111a2c;
+  --ink: #e8ecf5;
+  --ink-muted: #96a1ba;
+  --rule: #22304a;
+  --accent: #3ddc84;
+  --accent-soft: #10281c;
 }
 
 @theme inline {

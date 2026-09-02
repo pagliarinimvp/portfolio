@@ -16,8 +16,8 @@ test.describe("acessibilidade", () => {
     });
   }
 
-  test("o tema escuro também passa na verificação", async ({ page }) => {
-    await page.emulateMedia({ colorScheme: "dark" });
+  test("o tema claro também passa na verificação", async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem("tema", "claro"));
     await page.goto("/");
 
     const resultado = await new AxeBuilder({ page })
@@ -47,18 +47,20 @@ test.describe("navegação", () => {
     await expect(pular).toBeVisible();
   });
 
-  test("alterna entre tema claro e escuro e mantém a escolha", async ({ page }) => {
+  test("abre no tema escuro por padrão e mantém a escolha ao alternar", async ({
+    page,
+  }) => {
     await page.emulateMedia({ colorScheme: "light" });
     await page.goto("/");
 
     const html = page.locator("html");
-    await expect(html).not.toHaveClass(/dark/);
+    await expect(html).toHaveClass(/dark/);
 
     await page.getByRole("button", { name: /Alternar entre tema/ }).click();
-    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/dark/);
 
     await page.reload();
-    await expect(html).toHaveClass(/dark/);
+    await expect(html).not.toHaveClass(/dark/);
   });
 });
 

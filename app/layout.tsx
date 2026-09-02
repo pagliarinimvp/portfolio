@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono, Literata } from "next/font/google";
+import { IBM_Plex_Mono, Literata } from "next/font/google";
 
 import "./globals.css";
 
@@ -7,14 +7,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { perfil } from "@/content/perfil";
 import { site } from "@/lib/site";
-
-// Manchete em grotesca, corpo em serifada: o inverso do par usual, e o que se
-// ve em caderno de economia — titulo seco, texto feito para leitura longa.
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-archivo",
-  display: "swap",
-});
 
 const literata = Literata({
   subsets: ["latin"],
@@ -48,9 +40,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-// Aplica o tema antes da primeira pintura, senao a pagina pisca em branco
-// para quem escolheu o tema escuro.
-const scriptTema = `try{var t=localStorage.getItem("tema");var e=t?t==="escuro":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",e)}catch(n){}`;
+// Aplica o tema antes da primeira pintura, senao a pagina pisca no tema
+// errado. O escuro e o padrao do site — so vira claro se a pessoa escolheu.
+const scriptTema = `try{var t=localStorage.getItem("tema");var e=t?t==="escuro":true;document.documentElement.classList.toggle("dark",e)}catch(n){}`;
 
 // Schema.org: ajuda o Google a entender de quem e o site.
 const dadosEstruturados = {
@@ -70,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // elemento onde e declarada.
     <html
       lang="pt-BR"
-      className={`${archivo.variable} ${literata.variable} ${plexMono.variable}`}
+      className={`${literata.variable} ${plexMono.variable} dark`}
       suppressHydrationWarning
     >
       <head>
