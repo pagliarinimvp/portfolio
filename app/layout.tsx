@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Pular para o conteúdo
         </a>
         <SiteHeader />
-        <main id="conteudo" className="mx-auto max-w-[clamp(64rem,90vw,100rem)] px-6">
+        <main id="conteudo" className="mx-auto max-w-[clamp(64rem,80vw,88rem)] px-6">
           {children}
         </main>
         <SiteFooter />
