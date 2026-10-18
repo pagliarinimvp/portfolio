@@ -65,11 +65,9 @@ quebra o build. Formatar conteúdo à mão.
   recentemente e responder de memória gera código desatualizado
 - `superpowers:verification-before-completion` antes de dizer que algo está pronto
 
-## Pendências
+## Onde ficam as pendências
 
-1. Currículo do Marcos → preenche `content/perfil.ts`
-2. Seção "o que deu errado" do caso FinQuant (marcada no `.mdx`) — só ele sabe
-3. Domínio próprio → `NEXT_PUBLIC_SITE_URL` na Vercel
+Pendências e melhorias previstas: [`PENDENCIAS.md`](PENDENCIAS.md), cada item ligado à sua linha no banco 💡 Sugestões do Centro de Comando (desde 18/10/2026).
 
 <!-- BEGIN:nextjs-agent-rules -->
 
